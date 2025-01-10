@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfPresentation.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        Title="About" Height="260" Width="400">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="About This Application" 
+                       FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" />
+            
+            <TextBlock Text="This application will be used by liberary staff in order to complete
+                       individual tasks based on their roles. The role that each liberary staff 
+                       is given allows them to access certain sections of the application. This is to ensure everything is secure."
+                       TextWrapping="Wrap"
+                       Margin="0,10,0,0"/>
+            <TextBlock Text="All staff should login with their liberary email and account password. "
+                       Margin="0,10,0,0"/>
+            <TextBlock Text="Application developed by: Skyann Heintz"
+                        Margin="0,10,0,0"/>
+            
+            <Button Content="Close" Width="80"  HorizontalAlignment="Center" Margin="0,20,0,0"
+                    Click="btnCloseAboutWindow_Click"/> 
+        </StackPanel>
+    </Grid>
+</Window>

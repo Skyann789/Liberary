@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfPresentation.frmMaintenaceBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Move Book to Maintenance" Height="446" Width="552" Loaded="Window_Loaded">
+    <Grid Margin="0,0,118,108">
+        <!--Header-->
+        <TextBlock Text="Move Book to Maintenance" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="173,15,0,0"/>
+
+        <!--Book ID-->
+        <Label Content="Book ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
+        <TextBox Name="txtBookID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,53,0,0" Width="250"/>
+
+        <!--Select Staff-->
+        <Label Content="Select Staff:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,80,0,0"/>
+        <ComboBox Name="cmbStaff" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,84,0,0" Width="250"/>
+
+        <!--Maintenance Date-->
+        <Label Content="Maintenance Date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,120,0,0"/>
+        <DatePicker Name="dpMaintenanceDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,122,0,0" Width="250"/>
+
+        <!--Maintenance Description-->
+        <Label Content="Description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,160,0,0"/>
+        <TextBox Name="txtDescription" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,160,0,0" Width="250" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+        <!-- Button-->
+        <Button x:Name="btnSendToMaintenace" Content="Send to Maintenace" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="179,0,0,-56" Width="130" Height="26" Click="btnSendToMaintenace_Click"/>
+
+    </Grid>
+</Window>

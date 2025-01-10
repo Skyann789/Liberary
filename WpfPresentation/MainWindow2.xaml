@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="WpfPresentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="650" Width="1200">
+    <Grid>
+        <!-- Outer Page grid-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+    <Menu Padding="20 0 0 0">
+        <!-- File Menu Section-->
+        <MenuItem Header="File" x:Name="mnuFile">
+        <MenuItem Header="Exit" x:Name="mnuExit" Click="mnuExit_Click"></MenuItem>
+    </MenuItem>
+
+    <!-- Edit Menu Section-->
+    <MenuItem Header="Edit" x:Name="mnuEdit">
+    <MenuItem Header="Preferences" x:Name="mnuPreferences" Click="mnuPreferences_Click"></MenuItem>
+    </MenuItem>
+
+    <!-- Helper Menu Section-->
+    <MenuItem Header="Help" x:Name="mnuHelp">
+    <MenuItem Header="About" x:Name="mnuAbout" Click="mnuAbout_Click"></MenuItem>
+    </MenuItem>
+    </Menu>
+
+    <!-- inner grid for login controls -->
+    <Grid Grid.Row="1">
+    <Grid.RowDefinitions>
+    <RowDefinition />
+    <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="120"/>
+    <ColumnDefinition />
+    <ColumnDefinition Width="250" />
+    <ColumnDefinition Width="250" />
+    <ColumnDefinition Width="120" />
+    </Grid.ColumnDefinitions>
+
+    <!-- Greeting -->
+    <Label x:Name="lblGreeting" Grid.Column="1" Padding="20 0 0 0"
+    Grid.RowSpan ="2" Content="You are not logged in." Margin="5" 
+    VerticalAlignment="Center" FontSize="14"/>
+    <!-- Email textbox -->
+    <TextBox x:Name="txtEmail" Grid.Row="0" Grid.Column="2"
+        Margin="5 5 5 0" HorizontalContentAlignment="Center"
+        VerticalContentAlignment="Center" FontSize="14"/>
+    <!-- Password Box -->
+    <PasswordBox x:Name="pwdPassword" Grid.Row="0" Grid.Column="3"
+        Margin="5 5 5 0" HorizontalContentAlignment="Center"
+        VerticalContentAlignment="Center" FontSize="14"/>
+    <!-- Login / Logout button -->
+    <Button x:Name="btnLoginLogout" Grid.Column="4" Margin="10,5,10,0" Content="Log In"  
+    FontSize="14" FontWeight="Bold" Background="#ADD8E6" Foreground="Black" Click="btnLoginLogout_Click"/>
+    <!-- Email Label -->
+    <Label x:Name="lblEmail" Grid.Row="1" Grid.Column="2"
+    Content="Email" HorizontalAlignment="Center" 
+    VerticalAlignment="Top" FontSize="14"/>
+    <!-- Password label -->
+    <Label x:Name="lblPassword" Grid.Row="1" Grid.Column="3"
+    Content="Password" HorizontalAlignment="Center" 
+    VerticalAlignment="Top" FontSize="14"/>
+    </Grid>
+    <!-- inner grid for login controls -->
+
+    <TabControl x:Name="tabSetMain" Grid.Row="3">
+
+    <!-- Available Books Tab -->
+    <TabItem x:Name="tabAvailable" Header="Available Books" >
+    <Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="171*"/>
+        <ColumnDefinition Width="488*"/>
+        <ColumnDefinition Width="52*"/>
+        <ColumnDefinition Width="11*"/>
+        <ColumnDefinition Width="472*"/>
+    </Grid.ColumnDefinitions>
+    <DataGrid x:Name="dataGridAvailableBooks" AutoGenerateColumns="False" Margin="10,10,10,10" Grid.ColumnSpan="5">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Title"  Width="*"/>
+            <DataGridTextColumn Header="Author"  Width="*"/>
+            <DataGridTextColumn Header="Genre"  Width="*"/>
+            <DataGridTextColumn Header="Published Year"  Width="*"/>
+        </DataGrid.Columns>
+    </DataGrid>
+    </Grid>
+    </TabItem>
+
+
+    <TabItem x:Name="tabReserve" Header="Reserved Books" >
+    <Grid>
+    <DataGrid x:Name="dataGridReservedBooks" AutoGenerateColumns="False" Margin="10">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Title"  Width="*"/>
+            <DataGridTextColumn Header="Author"  Width="*"/>
+            <DataGridTextColumn Header="Genre"  Width="*"/>
+            <DataGridTextColumn Header="Published Year"  Width="*"/>
+        </DataGrid.Columns>
+    </DataGrid>
+    </Grid>
+
+    </TabItem>
+    <TabItem x:Name="tabCheckin" Header="Check-in and Inspection" />
+    <TabItem x:Name="tabPrep" Header="Prep for Rental" />
+    <TabItem x:Name="tabMaintenance" Header="In Maintenance" />
+    <TabItem x:Name="tabInventory" Header="Inventory Management" />
+
+    <!-- Staff Tab-->
+    <TabItem
+    x:Name="tabStaff" Header="Staff" Height="20" VerticalAlignment="Bottom" >
+    <Grid x:Name="gridStaff">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <!-- Displays the Staff who is currently logged in information-->
+    <Label x:Name="lblStaffInfo" Content="Staff Information Page" Margin="10" 
+            FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" />
+
+    <Label x:Name="lblStaffGivenName" Content="Given Name: " Margin="10,10,10,10" Grid.Row="1" />
+    <TextBlock x:Name="txtStaffGivenName" Margin="90,10,10,10" Grid.Row="1" VerticalAlignment="Center" />
+
+    <Label x:Name="lblStaffFamilyName" Content="Family Name: " Margin="10,10,10,10" Grid.Row="2" />
+    <TextBlock x:Name="txtStaffFamilyName" Margin="90,10,10,10" Grid.Row="2" VerticalAlignment="Center" />
+
+    <Label x:Name="lblStaffRole" Content="Role(s): " Margin="10,10,10,10" Grid.Row="3"  />
+    <TextBlock x:Name="txtStaffRole" Margin="60,10,10,10" Grid.Row="3" VerticalAlignment="Center" />
+
+    <Label x:Name="lblStaffEmail" Content="Email: " Margin="335,10,-315,10" Grid.Row="2" />
+    <TextBlock x:Name="txtStaffEmail" Margin="380,10,10,10" Grid.Row="2" VerticalAlignment="Center"/>
+
+    <Label x:Name="lblStaffPhone" Content="Phone Number: " Margin="335,10,-315,10" Grid.Row="1" />
+    <TextBlock x:Name="txtStaffPhone" Margin="430,10,10,10" Grid.Row="1" VerticalAlignment="Center"/>
+
+    <!-- Where Staff can update their password-->
+    <Label x:Name="lblUpdatePassword" Content="Update Password:"  Margin="10,5,10,5" Grid.Row="4" />
+    <Button x:Name="btnUpdatePassword" Content="Update Password" Margin="10,10,1064,25" Grid.Row="5" Click="btnUpdatePassword_Click"/>
+    </Grid>
+    </TabItem>
+
+    <!-- Admin Tab -->
+    <TabItem x:Name="tabAdmin" Header="User Admin" Height="20" VerticalAlignment="Top" >
+    <StackPanel Margin="10">
+    <!-- Staff Members List -->
+    <ListView x:Name="listViewStaff" Height="300" Margin="0,0,0,10">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="ID" Width="70" DisplayMemberBinding="{Binding StaffID}" />
+                <GridViewColumn Header="Given Name" Width="100" DisplayMemberBinding="{Binding GivenName}" />
+                <GridViewColumn Header="Family Name" Width="100" DisplayMemberBinding="{Binding FamilyName}" />
+                <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding Phone}" />
+                <GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding Email}" />
+            </GridView>
+        </ListView.View>
+    </ListView>
+
+    <!-- Action Buttons -->
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button x:Name="btnAddStaff" Content="Add Staff" Width="120" Click="btnAddStaff_Click"  />
+    </StackPanel>
+    </StackPanel>
+
+    </TabItem>
+
+    </TabControl>
+
+    <!---space for controls here-->
+    <StatusBar Grid.Row="5">
+    <StatusBarItem x:Name="statusMessage" 
+    Content="Welcome. Please log in to continue."
+    Padding="20, 0, 0, 0"/>
+    </StatusBar>
+    </Grid>
+
+</Window>

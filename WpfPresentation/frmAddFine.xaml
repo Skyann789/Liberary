@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfPresentation.frmAddFine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Add Fine" Height="300" Width="400">
+    <Grid>
+        <!-- Header-->
+        <TextBlock Text="Add a Fine to Member" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="129,24,0,0" FontWeight="Bold"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+           
+            <!-- Member ID-->
+            <TextBlock Text="Member ID:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtMemberID" Width="200" Margin="0,0,0,10"/>
+
+            <!-- Amount-->
+            <TextBlock Text="Amount:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtAmount" Width="200" Margin="0,0,0,10"/>
+
+            <!-- Issue Date-->
+            <TextBlock Text="Issue Date:" Margin="0,0,0,5"/>
+            <DatePicker x:Name="dpIssueDate" Width="200" Margin="0,0,0,10"/>
+            
+            <!-- Add Fine Button-->
+            <Button Content="Add Fine" Width="200" Click="btnAddFine_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

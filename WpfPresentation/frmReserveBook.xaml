@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfPresentation.frmReserveBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Reserve a Book" Height="306" Width="509" Loaded="Window_Loaded">
+    <Grid Margin="0,0,118,108">
+
+        <!--Header-->
+        <TextBlock Text="Reserve a Book" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="173,15,0,0"/>
+        <!--BookID-->
+        <Label Content="Book ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
+        <TextBox x:Name="txtBookID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,44,0,0" Width="250"/>
+        <!--Selection of Member-->
+        <Label Content="Select Member:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,80,0,0"/>
+        <ComboBox x:Name="cmbMember" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,84,0,0" Width="250" />
+        <!--Selection of Staff-->
+        <Label Content="Select Staff:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,120,0,0"/>
+        <ComboBox x:Name="cmbStaff" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,124,0,0" Width="250" />
+        <!--Reservation Date-->
+        <Label Content="Reservation Date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,157,0,0"/>
+        <DatePicker Name="dpReservationDate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,161,0,0" Width="250"/>
+        <!--Reservation Button-->
+        <Button x:Name="btnReserve" Content="Reserve" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="166,0,0,-58" Width="100" Height="30" Click="btnReserve_Click" />
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfPresentation.PreferencesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        Title="Preferences" Height="150" Width="300">
+
+
+    <StackPanel Margin="10">
+        <TextBlock Text="Preferences"
+                   FontSize="14" FontWeight="Bold" TextAlignment="Center" />
+        <TextBox Text="Currently no preferences are available to be set." />
+        <TextBlock Text="Please check back later to set your preferences."/>
+        <Button Content="Close" Width="80"
+                Click="btnClosePreferencesWindow_Click" />
+    </StackPanel>
+</Window>
